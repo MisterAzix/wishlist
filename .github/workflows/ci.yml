@@ -26,6 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run format:check
+      - run: npm run validate:products
       - run: npm test
       - run: npm run check
       - name: Configure GitHub Pages

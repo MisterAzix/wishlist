@@ -2,11 +2,11 @@
 
 Use TypeScript in strict mode. Use the exact Node.js version in `.nvmrc` (`nvm use`).
 
-Before committing, run `npm run lint`, `npm run format:check`, `npm test`, `npm run check`, and `npm run build`. Use Conventional Commits (`feat`, `fix`, `chore`, `ci`, `docs`) and keep each behavior change in a focused commit. Preserve the default shadcn preset `b0` appearance.
+Before committing, run `npm run lint`, `npm run format:check`, `npm run validate:products`, `npm test`, `npm run check`, and `npm run build`. Use Conventional Commits (`feat`, `fix`, `chore`, `ci`, `docs`) and keep each behavior change in a focused commit. Preserve the default shadcn preset `b0` appearance.
 
 ## Product content
 
-For link-based additions, use the `wishlist-add-product` skill (versioned source in `skills/wishlist-add-product/SKILL.md`). Its Python helper only materializes confirmed data; it does not authorize Git pushes or guarantee universal scraping.
+For link-based additions, use the `wishlist-add-product` skill (versioned source in `skills/wishlist-add-product/SKILL.md`) and the existing Markdown template in `docs/product-template.md`.
 
 - Read `PRODUCT.md` before changing behavior and `DESIGN.md` before changing presentation.
 - Use one Markdown file per product in `src/content/products/`, based on `docs/product-template.md`.
@@ -16,7 +16,7 @@ For link-based additions, use the `wishlist-add-product` skill (versioned source
 - Only set `archived: true` when the owner confirms purchase. Archive state is shared through the content, not browser storage.
 - Show product names on cards and keep accessible link names. Hide archived cards by default and let visitors include them through the filter; keep them clickable and explicitly marked as purchased.
 - Offer system/light/dark theme selection and persist the visitor's explicit preference locally. Category, archive and sort controls must work together. Never numerically compare different currencies without a visible grouping or a verified conversion.
-- Commit content additions separately from code changes. Automatic ingestion, price monitoring, search, and gift reservations are outside this version.
+- Commit content additions separately from code changes.
 
 When starting the dev server, use background mode:
 

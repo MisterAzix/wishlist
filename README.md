@@ -23,6 +23,7 @@ La version exacte de Node est définie dans `.nvmrc`. Utiliser l’URL affichée
 ```sh
 npm run lint
 npm run format:check
+npm run validate:products
 npm test
 npm run check
 npm run build
@@ -30,7 +31,7 @@ npm run build
 
 `npm run lint:fix` applique les corrections ESLint disponibles ; `npm run format`
 formate les fichiers. `npm run preview` sert le résultat de `dist/`.
-La CI exécute lint, formatage, tests, contrôle des types et build à chaque push et pull request.
+La CI exécute lint, formatage, validation des fiches, tests, contrôle des types et build à chaque push et pull request.
 
 ## Ajouter avec le skill Codex
 
@@ -41,19 +42,15 @@ installé dans Codex, une session ayant accès au dépôt peut l'invoquer avec :
 $wishlist-add-product https://boutique.example/produit
 ```
 
-L'agent vérifie la page, le prix initial, la devise et les variantes. Il demande une
-précision si nécessaire, recherche les doublons (achats compris), puis prépare une
-fiche. Le helper Python 3.10+ inclus crée le Markdown depuis un JSON confirmé :
-aperçu par défaut, écriture explicite avec `--write`, refus des écrasements et des
-doublons détectés. Il ne consulte pas de site et n'exécute aucune commande Git.
-Le skill guide ensuite les contrôles et le commit de contenu ciblé ; il ne pousse
-pas automatiquement vers GitHub.
-
-Les tests isolés du helper peuvent être lancés avec :
-
-```sh
-PYTHONDONTWRITEBYTECODE=1 python3 skills/wishlist-add-product/scripts/test_create_product.py
-```
+L'agent lit la page, vérifie les champs utiles et recherche le lien dans les fiches
+existantes, achats compris. Il crée ensuite la fiche à partir de
+`docs/product-template.md`, conserve le lien fourni et demande une précision si
+nécessaire. Le skill guide les contrôles et le commit ciblé de la fiche et de ses
+images. `npm run validate:products` vérifie les fichiers Markdown avec le schéma du
+site, refuse les champs inconnus et détecte les images manquantes et les liens
+dupliqués, achats compris. La commande n'écrit aucun fichier et ne consulte pas
+les boutiques ; l'agent reste responsable de vérifier les informations à la source.
+Aucun JSON intermédiaire n'est nécessaire.
 
 ## Ajouter un produit
 
