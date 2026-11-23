@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ajouter un produit à la wishlist"
+  short_description: "Créer une fiche vérifiée depuis un lien marchand"
+  default_prompt: "Utilise $wishlist-add-product pour ajouter ce lien à ma wishlist."
