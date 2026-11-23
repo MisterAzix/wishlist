@@ -118,6 +118,9 @@
 }
 
 @layer base {
+  [hidden] {
+    display: none !important;
+  }
   * {
     @apply border-border outline-ring/50;
   }

@@ -1,17 +1,54 @@
 ---
-import "@/styles/global.css";
+import { getCollection } from "astro:content";
+import { ProductCard } from "@/components/ProductCard";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const products = (await getCollection("products")).sort((a, b) =>
+  a.id.localeCompare(b.id, "fr"),
+);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout>
+  <main class="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-16">
+    <header class="mb-8">
+      <h1 class="text-3xl font-semibold tracking-tight">Ma wishlist</h1>
+      <p class="mt-2 text-base text-muted-foreground">
+        À offrir ou à m’offrir.
+      </p>
+    </header>
+    {products.length > 0 ? (
+      <ul
+        aria-label="Produits de ma wishlist"
+        class="grid grid-cols-1 gap-5 min-[360px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+        {products.map(({ id, data }) => (
+          <li data-product={id} data-category={data.category}>
+            <ProductCard product={data} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="py-12 text-muted-foreground">Aucune envie pour le moment.</p>
+    )}
+  </main>
+</BaseLayout>
+
+<script>
+  document.addEventListener(
+    "error",
+    (event) => {
+      const image = event.target;
+      if (
+        image instanceof HTMLImageElement &&
+        image.hasAttribute("data-product-image")
+      ) {
+        image.hidden = true;
+        const fallback = image.parentElement?.querySelector<HTMLElement>(
+          "[data-image-fallback]",
+        );
+        if (fallback) fallback.hidden = false;
+      }
+    },
+    true,
+  );
+</script>
