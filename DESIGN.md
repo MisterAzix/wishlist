@@ -95,7 +95,7 @@ components:
 
 Une galerie compacte laisse les photographies marchandes porter la personnalité des produits. Le cadre reste celui du preset shadcn `b0` : style `base-nova`, base `neutral` et Inter, sans personnalisation du thème.
 
-Le thème suit le système, y compris ses changements pendant la consultation. La sobriété vient des composants par défaut et d'une hiérarchie courte, sans décor ajouté.
+Le thème propose Système, Clair et Sombre et conserve le choix localement ; Système suit les changements de préférence pendant la consultation. La sobriété vient des composants par défaut et d'une hiérarchie courte, sans décor ajouté.
 
 **Key Characteristics:**
 
@@ -132,13 +132,13 @@ Inter Variable, avec repli sans-serif, sert à tous les rôles. La graisse et l'
 - **Control** : filtre natif et texte du repli photo.
 - **Label** : badges de catégorie et d'achat, en casse naturelle.
 
-Les noms des produits restent disponibles dans le nom accessible du lien et le texte alternatif de l'image, sans titre visible dans la carte.
+Les noms des produits apparaissent en titre visible dans chaque carte (Inter 16 px, graisse 500, interligne 1,375) et restent disponibles dans le nom accessible du lien et le texte alternatif de l'image.
 
 ## Layout
 
-Le conteneur centré atteint 72 rem. Ses marges internes sont de 20 px sur les côtés et 40 px verticalement ; à partir de 640 px, elles passent à 32 px et 64 px. L'en-tête place titre et sous-titre au-dessus du filtre sur petit écran, puis les aligne sur une ligne à partir de 640 px. Son espacement interne est de 24 px, puis 32 px le séparent de la grille.
+Le conteneur centré atteint 72 rem. Ses marges internes sont de 20 px sur les côtés et 40 px verticalement ; à partir de 640 px, elles passent à 32 px et 64 px. L'en-tête place titre et sous-titre au-dessus du sélecteur de thème sur petit écran, puis les aligne sur une ligne à partir de 640 px. Son espacement interne est de 24 px. Un espace de 32 px sépare l'en-tête des contrôles de catégorie, de tri et d'achats ; ces contrôles précèdent la grille de 24 px.
 
-La grille conserve un intervalle de 20 px : une colonne sous 360 px, deux dès 360 px, trois dès 768 px et quatre dès 1024 px. Les cartes remplissent leur cellule. Leur photographie carrée conserve le produit entier avec 16 px de marge interne. Le bloc prix/catégorie utilise 16 px de marge interne et 8 px entre ses éléments.
+La grille conserve un intervalle de 20 px : une colonne sous 360 px, deux dès 360 px, trois dès 768 px et quatre dès 1024 px. Les cartes remplissent leur cellule. Leur photographie carrée conserve le produit entier avec 16 px de marge interne. Le bloc titre/prix/catégorie utilise 16 px de marge interne et 8 px entre ses éléments. Les contrôles de thème, de catégorie, d’achats et de tri restent compacts et reviennent à la ligne selon la place disponible.
 
 ## Elevation & Depth
 
@@ -160,9 +160,9 @@ La variante secondaire sert à la catégorie et à « Acheté ». Le badge d'ach
 
 ### Cartes liées
 
-Toute la carte est un lien vers le marchand. Le focus du lien dessine un contour de 2 px décalé de 4 px. La surface conserve le composant Card b0 ; seuls son espacement et son contenu sont adaptés à la galerie. Le prix apparaît au-dessus de la catégorie.
+Toute la carte est un lien vers le marchand. Le focus du lien dessine un contour de 2 px décalé de 4 px. La surface conserve le composant Card b0 ; seuls son espacement et son contenu sont adaptés à la galerie. Le titre visible précède le prix, puis la catégorie.
 
-Une carte achetée reste cliquable : image en niveaux de gris à 60 % d'opacité, prix barré et atténué, badge « Acheté » explicite. Une image absente ou en erreur laisse place à une icône ImageOff SVG et au texte « Photo indisponible ». Un prix absent affiche « Prix non renseigné ».
+Les achats sont masqués par défaut et peuvent être inclus via le filtre. Une carte achetée affichée reste cliquable : image en niveaux de gris à 60 % d'opacité, prix barré et atténué, badge « Acheté » explicite. Une image absente ou en erreur laisse place à une icône ImageOff SVG et au texte « Photo indisponible ». Un prix absent affiche « Prix non renseigné ».
 
 ## Do's and Don'ts
 
@@ -175,6 +175,6 @@ Une carte achetée reste cliquable : image en niveaux de gris à 60 % d'opacité
 
 ### Don't:
 
-- **Don't** ajouter de titre visible aux cartes de produits.
+- **Don't** masquer les titres des produits ni afficher les achats par défaut.
 - **Don't** supprimer le lien d'une carte achetée.
 - **Don't** remplacer une donnée manquante par un prix ou une photographie inventés.

@@ -24,13 +24,15 @@ Un fichier Markdown par produit, versionné dans Git. Les ajouts et les achats s
 
 ## Capabilities and Constraints
 
-- Cartes entièrement cliquables vers les liens marchands, avec photo, prix et catégorie.
-- Nom conservé pour l'accessibilité, sans titre visible sur les cartes.
-- `archived` est un booléen : une carte achetée reste visible et cliquable, grisée, avec une mention « Acheté » et le prix barré.
-- Filtre par grande catégorie après le premier affichage minimal.
-- Thème clair ou sombre selon le système ; aspect par défaut du preset b0.
+- Cartes entièrement cliquables vers les liens marchands, avec titre visible, photo, prix initial hors promotion et catégorie.
+- Conserver le prix normal affiché lorsqu'aucune promotion n'est présentée ; ne pas le confondre avec un prix de pack ou un tarif conseillé fabricant.
+- `archived` est un booléen : les achats sont masqués par défaut. Un filtre permet de les inclure ; ils restent cliquables, grisés, marqués « Acheté », avec le prix barré.
+- Filtre par grande catégorie, combinable avec l'affichage des achats et les tris prix croissant/décroissant et A–Z/Z–A.
+- Prix manquants en fin de tri ; pas de comparaison numérique trompeuse entre devises différentes.
+- Sélecteur de thème Système/Clair/Sombre, avec préférence locale persistante ; aspect par défaut du preset b0.
 - ESLint, Prettier, version exacte de Node dans `.nvmrc`, commits Conventional Commits.
 - Collecte automatique, recherche d'offres, alertes de prix et réservation de cadeaux hors de cette version.
+- Ajout assisté par un skill Codex prenant un lien marchand en entrée, avec création déterministe d'une fiche à partir d'informations vérifiées et commit ciblé.
 
 ## Evidence on Hand
 

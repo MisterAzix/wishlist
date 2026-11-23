@@ -2,18 +2,21 @@
 
 Use TypeScript in strict mode. Use the exact Node.js version in `.nvmrc` (`nvm use`).
 
-Before committing, run `npm run lint`, `npm run format:check`, `npm run check`, and `npm run build`. Use Conventional Commits (`feat`, `fix`, `chore`, `ci`, `docs`) and keep each behavior change in a focused commit. Preserve the default shadcn preset `b0` appearance.
+Before committing, run `npm run lint`, `npm run format:check`, `npm test`, `npm run check`, and `npm run build`. Use Conventional Commits (`feat`, `fix`, `chore`, `ci`, `docs`) and keep each behavior change in a focused commit. Preserve the default shadcn preset `b0` appearance.
 
 ## Product content
+
+For link-based additions, use the `wishlist-add-product` skill (versioned source in `skills/wishlist-add-product/SKILL.md`). Its Python helper only materializes confirmed data; it does not authorize Git pushes or guarantee universal scraping.
 
 - Read `PRODUCT.md` before changing behavior and `DESIGN.md` before changing presentation.
 - Use one Markdown file per product in `src/content/products/`, based on `docs/product-template.md`.
 - Check existing URLs and references, including archived entries, before adding a product. Preserve useful size/color URL parameters.
-- Never invent product prices or images. Use `null` for missing information; keep the original image URL in `imageSource` and the observation date in `priceCheckedAt`.
+- Never invent product prices or images. `price` stores the verified regular/original product price, not a discounted offer. If there is no promotion, use the normal displayed price. Do not substitute a bundle price or manufacturer recommended price. Use `null` when the original price cannot be established; keep the original image URL in `imageSource` and the observation date in `priceCheckedAt`.
 - Use local images under `public/images/`; do not fetch merchant pages during the build.
 - Only set `archived: true` when the owner confirms purchase. Archive state is shared through the content, not browser storage.
-- Keep product names accessible but off the visible cards. Keep archived cards clickable.
-- Commit content additions separately from code changes. Automatic ingestion, price monitoring, search, sorting, and gift reservations are outside this version.
+- Show product names on cards and keep accessible link names. Hide archived cards by default and let visitors include them through the filter; keep them clickable and explicitly marked as purchased.
+- Offer system/light/dark theme selection and persist the visitor's explicit preference locally. Category, archive and sort controls must work together. Never numerically compare different currencies without a visible grouping or a verified conversion.
+- Commit content additions separately from code changes. Automatic ingestion, price monitoring, search, and gift reservations are outside this version.
 
 When starting the dev server, use background mode:
 

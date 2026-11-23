@@ -9,7 +9,10 @@ archived: false
 ---
 
 Copier ce fichier dans `src/content/products/` avec un nom stable et unique.
-Remplacer les exemples par les données du produit. `null` indique une information
+Remplacer les exemples par les données du produit. `price` désigne le prix initial
+hors promotion ; si aucune promotion n'est affichée, utiliser le prix normal du
+produit seul. Ne pas confondre avec un prix de pack ou un tarif conseillé fabricant.
+`null` indique une information
 manquante. Une photo locale utilise un chemin tel que `/images/mon-produit.webp`.
 Les champs facultatifs `imageSource` et `priceCheckedAt` conservent la provenance
 de l'image et la date du prix au format `YYYY-MM-DD`.

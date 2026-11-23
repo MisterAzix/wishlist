@@ -1,8 +1,8 @@
 # Wishlist
 
 Une wishlist statique, en français, à consulter sur téléphone ou ordinateur.
-Chaque carte ouvre la page marchande d’origine et affiche la photo, le prix et la catégorie.
-Les produits achetés restent visibles, grisés et marqués « Acheté ».
+Chaque carte ouvre la page marchande d’origine et affiche le titre, la photo, le prix initial et la catégorie.
+Les produits achetés sont masqués par défaut ; une option permet de les afficher, grisés et marqués « Acheté ».
 
 Astro, TypeScript strict, React, Tailwind et shadcn/ui avec le preset `b0`.
 Les composants sont générés en HTML ; seuls le filtre et le thème utilisent un peu de JavaScript.
@@ -23,13 +23,37 @@ La version exacte de Node est définie dans `.nvmrc`. Utiliser l’URL affichée
 ```sh
 npm run lint
 npm run format:check
+npm test
 npm run check
 npm run build
 ```
 
 `npm run lint:fix` applique les corrections ESLint disponibles ; `npm run format`
 formate les fichiers. `npm run preview` sert le résultat de `dist/`.
-La CI exécute les quatre vérifications à chaque push et pull request.
+La CI exécute lint, formatage, tests, contrôle des types et build à chaque push et pull request.
+
+## Ajouter avec le skill Codex
+
+La source du skill est versionnée dans `skills/wishlist-add-product/`. Lorsqu'il est
+installé dans Codex, une session ayant accès au dépôt peut l'invoquer avec :
+
+```text
+$wishlist-add-product https://boutique.example/produit
+```
+
+L'agent vérifie la page, le prix initial, la devise et les variantes. Il demande une
+précision si nécessaire, recherche les doublons (achats compris), puis prépare une
+fiche. Le helper Python 3.10+ inclus crée le Markdown depuis un JSON confirmé :
+aperçu par défaut, écriture explicite avec `--write`, refus des écrasements et des
+doublons détectés. Il ne consulte pas de site et n'exécute aucune commande Git.
+Le skill guide ensuite les contrôles et le commit de contenu ciblé ; il ne pousse
+pas automatiquement vers GitHub.
+
+Les tests isolés du helper peuvent être lancés avec :
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 skills/wishlist-add-product/scripts/test_create_product.py
+```
 
 ## Ajouter un produit
 
@@ -38,8 +62,10 @@ La CI exécute les quatre vérifications à chaque push et pull request.
 2. Renseigner le nom exact, le lien marchand et une grande catégorie.
 3. Placer la photo dans `public/images/`, de préférence en WebP, puis indiquer
    `/images/mon-produit.webp` dans la fiche. Conserver son URL d’origine dans `imageSource`.
-4. Renseigner le prix, sa devise et `priceCheckedAt` si le prix a été vérifié.
-   Utiliser `null` pour une photo ou un prix inconnu.
+4. Renseigner le prix initial hors promotion, sa devise et `priceCheckedAt`. Si aucune
+   promotion n’est affichée, utiliser le prix normal du produit seul. Ne pas confondre
+   avec le prix d’un pack ou un tarif conseillé fabricant. Utiliser `null` si le prix
+   initial est introuvable ou si la photo manque.
 5. Exécuter les vérifications, puis créer un commit Conventional Commits.
 
 Exemple de structure (les valeurs sont illustratives) :
@@ -56,8 +82,8 @@ archived: false
 ---
 ```
 
-Le titre sert au nom accessible du lien et au texte alternatif de l’image ; il
-n’apparaît pas sur la carte. Les éventuelles notes sous le frontmatter restent dans
+Le titre apparaît sur la carte et sert aussi au nom accessible du lien et au texte
+alternatif de l’image. Les éventuelles notes sous le frontmatter restent dans
 le dépôt et ne sont pas affichées sur le site.
 
 Catégories acceptées : Vêtements, Musique, Maison, Accessoires, High-tech, Loisirs,
@@ -68,8 +94,7 @@ existantes, y compris celles avec `archived: true`. Conserver les paramètres de
 variante utiles dans le lien marchand. Ne pas fusionner deux variantes distinctes.
 
 Les prix sont des relevés ponctuels, pas des prix actualisés automatiquement.
-La fiche UNIQLO initiale conserve un prix inconnu. Aucune des envies initiales
-n’a été déclarée achetée.
+Aucune des envies initiales n’a été déclarée achetée.
 
 ## Marquer comme acheté
 
@@ -79,14 +104,24 @@ Modifier uniquement le champ dans la fiche concernée :
 archived: true
 ```
 
-La carte reste cliquable. Sa photo devient grisée, son prix est barré et une mention
+La carte est masquée par défaut. Cocher « Afficher les produits achetés » permet de la voir :
+elle reste cliquable, sa photo devient grisée, son prix est barré et une mention
 « Acheté » apparaît. Pour la réactiver, remettre `archived: false`.
 Le changement est partagé avec tout le monde après publication.
 
 ## Thèmes
 
-Le site suit la préférence claire ou sombre du système, dès le premier affichage
-et lorsque celle-ci change. Les variables du preset shadcn sont conservées.
+Le sélecteur **Thème** permet de choisir **Système**, **Clair** ou **Sombre**. Le choix
+est conservé localement dans le navigateur. Par défaut, le site suit le système,
+y compris ses changements pendant la consultation. Les variables du preset shadcn
+sont conservées.
+
+## Filtrer et trier
+
+La catégorie, l’affichage des achats et le tri sont combinables. Les tris disponibles
+sont A–Z, Z–A, prix croissant et prix décroissant. Les prix manquants restent à la
+fin des tris de prix. Si plusieurs devises sont présentes, les prix sont regroupés
+par devise plutôt que comparés à tort sans conversion.
 
 ## Publier sur GitHub Pages
 
