@@ -1,15 +1,15 @@
 ---
 title: "KRK Kreate 3 — Paire d'enceintes de monitoring"
-url: "https://www.thomann.fr/krk_kreate_3.htm"
+url: "https://www.amazon.fr/KRK-Enceinte-Monitoring-Kreate-Paire/dp/B0FFGVYK43/ref=asc_df_B0FFGVYK43"
 image: "/images/krk-kreate-3.jpg"
-price: null
+price: 159
 currency: "EUR"
 category: "Musique"
 archived: false
-imageSource: "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_60/603241/20175143_800.jpg"
+imageSource: "https://m.media-amazon.com/images/I/81EBt7002aL._AC_SL1500_.jpg"
 priceCheckedAt: "2026-11-23"
 ---
 
-Fiche Thomann vérifiée le 23/11/2026 : article 603241, vendu par paire (une enceinte active et une enceinte passive).
+Fiche Amazon.fr vérifiée le 23/11/2026 : ASIN B0FFGVYK43, « KRK Enceinte de Monitoring Kreate 3 (la Paire) », vendu et expédié par SonoVente. Il s'agit d'une paire comprenant une enceinte gauche active et une enceinte droite passive.
 
-Le prix promotionnel affiché est de 149 € avec une réduction de 6 %. Les 159 € sont uniquement qualifiés de « Meilleur prix sur 30 jours », soit le minimum pratiqué avant la réduction actuelle. Le prix normal hors promotion n'est pas établi séparément ; `price` reste donc `null`.
+Prix initial hors promotion : 159 €, explicitement affiché comme « Ancien prix » à côté de l'offre Black Friday à 145 € (-9 %). La page indique aussi un prix le plus bas sur 30 jours de 159 €. Le champ `price` conserve l'ancien prix de la paire, sans utiliser le prix promotionnel ni le montant par enceinte de 72,50 €.
