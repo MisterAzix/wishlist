@@ -6,6 +6,20 @@ import { assetPath } from "@/lib/assets";
 <!doctype html>
 <html lang="fr">
   <head>
+    <script is:inline>
+      const colorPreference = window.matchMedia("(prefers-color-scheme: dark)");
+      const applyTheme = () => {
+        document.documentElement.classList.toggle(
+          "dark",
+          colorPreference.matches,
+        );
+        document.documentElement.style.colorScheme = colorPreference.matches
+          ? "dark"
+          : "light";
+      };
+      applyTheme();
+      colorPreference.addEventListener("change", applyTheme);
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta
