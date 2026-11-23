@@ -1,5 +1,9 @@
 ## Development
 
+Use TypeScript in strict mode. Use the exact Node.js version in `.nvmrc` (`nvm use`).
+
+Before committing, run `npm run lint`, `npm run format:check`, `npm run check`, and `npm run build`. Use Conventional Commits (`feat`, `fix`, `chore`, `ci`, `docs`) and keep each behavior change in a focused commit. Preserve the default shadcn preset `b0` appearance.
+
 When starting the dev server, use background mode:
 
 ```
