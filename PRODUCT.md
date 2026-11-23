@@ -24,7 +24,7 @@ Un fichier Markdown par produit, versionné dans Git. Les ajouts et les achats s
 
 ## Capabilities and Constraints
 
-- Cartes entièrement cliquables vers les liens marchands, avec titre visible, photo, prix initial hors promotion et catégorie.
+- Cartes entièrement cliquables vers les liens marchands dans un nouvel onglet, avec titre visible, photo, prix initial hors promotion et catégorie.
 - Conserver le prix normal affiché lorsqu'aucune promotion n'est présentée ; ne pas le confondre avec un prix de pack ou un tarif conseillé fabricant.
 - `archived` est un booléen : les achats sont masqués par défaut. Un filtre permet de les inclure ; ils restent cliquables, grisés, marqués « Acheté », avec le prix barré.
 - Filtre par grande catégorie, combinable avec l'affichage des achats et les tris prix croissant/décroissant et A–Z/Z–A.

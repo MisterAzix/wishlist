@@ -20,7 +20,9 @@ export function ProductCard({ product }: Props) {
   return (
     <a
       href={product.url}
-      aria-label={`${product.title} — ${price} — ${product.category}${product.archived ? " — Acheté" : ""}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${product.title} — ${price} — ${product.category}${product.archived ? " — Acheté" : ""} — Nouvel onglet`}
       className="block h-full rounded-xl outline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
     >
       <Card
