@@ -14,7 +14,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "check": "astro check"
+    "check": "astro check",
+    "test": "node --test tests/*.test.ts"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.9",
