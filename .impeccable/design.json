@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T00:34:42.910964+00:00",
+  "title": "Design System: Ma wishlist",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Background",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Foreground",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Primary",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "primary-foreground": {
+        "role": "primary",
+        "displayName": "Primary foreground",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "secondary-foreground": {
+        "role": "neutral",
+        "displayName": "Secondary foreground",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Muted foreground",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "input": {
+        "role": "neutral",
+        "displayName": "Input",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "ring": {
+        "role": "neutral",
+        "displayName": "Ring",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "photo": {
+        "role": "neutral",
+        "displayName": "Photo",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "background-dark": {
+        "role": "neutral",
+        "displayName": "Background dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "foreground-dark": {
+        "role": "neutral",
+        "displayName": "Foreground dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "card-dark": {
+        "role": "neutral",
+        "displayName": "Card dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "primary-dark": {
+        "role": "primary",
+        "displayName": "Primary dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "primary-foreground-dark": {
+        "role": "primary",
+        "displayName": "Primary foreground dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "secondary-dark": {
+        "role": "neutral",
+        "displayName": "Secondary dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "secondary-foreground-dark": {
+        "role": "neutral",
+        "displayName": "Secondary foreground dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Muted dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "muted-foreground-dark": {
+        "role": "neutral",
+        "displayName": "Muted foreground dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "input-dark": {
+        "role": "neutral",
+        "displayName": "Input dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      },
+      "ring-dark": {
+        "role": "neutral",
+        "displayName": "Ring dark",
+        "tonalRamp": [
+          "oklch(0.145 0 0)",
+          "oklch(0.205 0 0)",
+          "oklch(0.269 0 0)",
+          "oklch(0.371 0 0)",
+          "oklch(0.439 0 0)",
+          "oklch(0.556 0 0)",
+          "oklch(0.87 0 0)",
+          "oklch(0.97 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "price": {
+        "displayName": "Prix",
+        "purpose": "Chiffres tabulaires ; variante price-wide dès 640 px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-outline",
+        "value": "0 0 0 1px color-mix(in oklab, var(--foreground) 10%, transparent)",
+        "purpose": "Contour du composant Card b0 ; aucune ombre portée."
+      }
+    ],
+    "motion": [
+      {
+        "name": "default-duration",
+        "value": "150ms",
+        "purpose": "Transition de couleur des cartes et du filtre ; transition-all du badge natif."
+      },
+      {
+        "name": "default-easing",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Courbe Tailwind par défaut."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "two-columns",
+        "value": "360px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Filtre de catégorie",
+      "kind": "input",
+      "refersTo": "category-select",
+      "description": "Contrôle natif b0 avec focus visible ; les jetons héritent du thème actif.",
+      "html": "<label class=\"ds-select\"><select aria-label=\"Filtrer par catégorie\"><option>Toutes les catégories</option><option>Vêtements</option></select><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"/></svg></label>",
+      "css": ".ds-select{position:relative;display:inline-block;font-family:\"Inter Variable\",sans-serif}.ds-select select{appearance:none;min-width:0;width:100%;height:2rem;padding:.25rem 2rem .25rem .625rem;border:1px solid var(--input);border-radius:.625rem;background:transparent;color:var(--foreground);font:400 .875rem/1.428571 \"Inter Variable\",sans-serif;outline:none;transition:color 150ms cubic-bezier(.4,0,.2,1),background-color 150ms cubic-bezier(.4,0,.2,1),border-color 150ms cubic-bezier(.4,0,.2,1)}.ds-select select:focus-visible{border-color:var(--ring);box-shadow:0 0 0 3px color-mix(in oklab,var(--ring) 50%,transparent)}.ds-select select:disabled{pointer-events:none;cursor:not-allowed}.ds-select:has(select:disabled){opacity:.5}.ds-select option{background:Canvas;color:CanvasText}.ds-select svg{position:absolute;top:50%;right:.625rem;transform:translateY(-50%);width:1rem;height:1rem;color:var(--muted-foreground);pointer-events:none}.dark .ds-select select{background:color-mix(in oklab,var(--input) 30%,transparent)}.dark .ds-select select:hover{background:color-mix(in oklab,var(--input) 50%,transparent)}"
+    },
+    {
+      "name": "Badge secondaire",
+      "kind": "chip",
+      "refersTo": "category-badge",
+      "description": "Étiquette de catégorie non interactive ; même variante pour le marqueur d’achat.",
+      "html": "<span class=\"ds-badge\">Vêtements</span>",
+      "css": ".ds-badge{display:inline-flex;align-items:center;justify-content:center;gap:.25rem;width:fit-content;height:1.25rem;padding:.125rem .5rem;border:1px solid transparent;border-radius:1.625rem;background:var(--secondary);color:var(--secondary-foreground);font:500 .75rem/1.333333 \"Inter Variable\",sans-serif;white-space:nowrap}"
+    },
+    {
+      "name": "Carte produit liée",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "État sans données photo/prix ; data-archived=true illustre le marqueur et le prix barré sans modifier le contenu produit. Une photo réelle reste contenue sur blanc ; achetée, elle est grisée à 60 % d’opacité.",
+      "html": "<a class=\"ds-product\" href=\"#\" aria-label=\"Produit — Prix non renseigné — Vêtements\" data-archived=\"false\"><div class=\"ds-card\"><div class=\"ds-photo\"><div class=\"ds-fallback\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><line x1=\"2\" x2=\"22\" y1=\"2\" y2=\"22\"/><path d=\"M10.41 10.41a2 2 0 1 1-2.83-2.83\"/><line x1=\"13.5\" x2=\"6\" y1=\"13.5\" y2=\"21\"/><line x1=\"18\" x2=\"21\" y1=\"12\" y2=\"15\"/><path d=\"M3.59 3.59A1.99 1.99 0 0 0 3 5v14a2 2 0 0 0 2 2h14c.55 0 1.052-.22 1.41-.59\"/><path d=\"M21 15V5a2 2 0 0 0-2-2H9\"/></svg><span>Photo indisponible</span></div><span class=\"ds-badge ds-purchased\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m20 6-11 11-5-5\"/></svg>Acheté</span></div><div class=\"ds-details\"><span class=\"ds-price\">Prix non renseigné</span><span class=\"ds-badge\">Vêtements</span></div></div></a>",
+      "css": ".ds-product{display:block;max-width:17rem;height:100%;border-radius:.875rem;color:var(--card-foreground);text-decoration:none;outline-offset:4px;font-family:\"Inter Variable\",sans-serif}.ds-product:focus-visible{outline:2px solid var(--ring)}.ds-card{height:100%;overflow:hidden;border-radius:.875rem;background:var(--card);box-shadow:0 0 0 1px color-mix(in oklab,var(--foreground) 10%,transparent);transition:background-color 150ms cubic-bezier(.4,0,.2,1)}.ds-product:hover .ds-card,.ds-product[data-archived=true] .ds-card{background:color-mix(in oklab,var(--muted) 40%,transparent)}.ds-photo{position:relative;aspect-ratio:1;background:#fff}.ds-fallback{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:1rem;background:var(--muted);color:var(--muted-foreground);font-size:.875rem;line-height:1.428571;text-align:center}.ds-fallback svg{width:1.5rem;height:1.5rem}.ds-details{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;padding:1rem}.ds-price{font-size:1rem;line-height:1.5;font-weight:600;font-variant-numeric:tabular-nums}.ds-purchased{position:absolute;top:.75rem;left:.75rem;display:none}.ds-product[data-archived=true] .ds-purchased{display:inline-flex}.ds-product[data-archived=true] .ds-price{color:var(--muted-foreground);text-decoration:line-through}.ds-purchased svg{width:.75rem;height:.75rem}@media(min-width:640px){.ds-price{font-size:1.125rem;line-height:1.555556}}.ds-badge{display:inline-flex;align-items:center;justify-content:center;gap:.25rem;width:fit-content;height:1.25rem;padding:.125rem .5rem;border:1px solid transparent;border-radius:1.625rem;background:var(--secondary);color:var(--secondary-foreground);font:500 .75rem/1.333333 \"Inter Variable\",sans-serif;white-space:nowrap}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La galerie simple",
+    "overview": "Une galerie compacte laisse les photographies marchandes porter la personnalité des produits. Le cadre reste celui du preset shadcn `b0` : style `base-nova`, base `neutral` et Inter, sans personnalisation du thème.\n\nLe thème suit le système, y compris ses changements pendant la consultation. La sobriété vient des composants par défaut et d'une hiérarchie courte, sans décor ajouté.",
+    "keyCharacteristics": [
+      "Palette neutre, en clair et en sombre.",
+      "Photographies contenues dans des carrés blancs.",
+      "Prix lisible et catégorie secondaire.",
+      "États explicites et navigation au clavier visible."
+    ],
+    "rules": [
+      {
+        "name": "The Preset Rule",
+        "body": "Conserver les valeurs et le comportement du preset b0 ; ne pas ajouter une palette ou un thème propre à la galerie.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do conserver les composants, jetons neutres et arrondis du preset b0.",
+      "Do garder les photos entières sur fond blanc dans les deux thèmes.",
+      "Do rendre le focus clavier visible et conserver les noms accessibles des produits.",
+      "Do associer le gris d'une carte achetée à un prix barré et au marqueur « Acheté »."
+    ],
+    "donts": [
+      "Don't ajouter de titre visible aux cartes de produits.",
+      "Don't supprimer le lien d'une carte achetée.",
+      "Don't remplacer une donnée manquante par un prix ou une photographie inventés."
+    ]
+  }
+}
