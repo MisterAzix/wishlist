@@ -1,5 +1,5 @@
 ---
-name: Ma wishlist
+name: Wishlist Maxence
 description: Une galerie simple, dans le thème shadcn b0 par défaut.
 colors:
   background: "oklch(1 0 0)"
@@ -87,7 +87,7 @@ components:
     height: "2rem"
 ---
 
-# Design System: Ma wishlist
+# Design System: Wishlist Maxence
 
 ## Overview
 
@@ -136,7 +136,7 @@ Les noms des produits apparaissent en titre visible dans chaque carte (Inter 16 
 
 ## Layout
 
-Le conteneur centré atteint 72 rem. Ses marges internes sont de 20 px sur les côtés et 40 px verticalement ; à partir de 640 px, elles passent à 32 px et 64 px. L'en-tête place titre et sous-titre au-dessus du sélecteur de thème sur petit écran, puis les aligne sur une ligne à partir de 640 px. Son espacement interne est de 24 px. Un espace de 32 px sépare l'en-tête des contrôles de catégorie, de tri et d'achats ; ces contrôles précèdent la grille de 24 px.
+Le conteneur centré atteint 72 rem. Ses marges internes sont de 20 px sur les côtés et 40 px verticalement ; à partir de 640 px, elles passent à 32 px et 64 px. L'en-tête place le titre au-dessus du sélecteur de thème sur petit écran, puis les aligne verticalement au centre d'une même ligne à partir de 640 px. Son espacement interne est de 24 px. Un espace de 32 px sépare l'en-tête des contrôles de catégorie, de tri et d'achats ; ces contrôles précèdent la grille de 24 px.
 
 La grille conserve un intervalle de 20 px : une colonne sous 360 px, deux dès 360 px, trois dès 768 px et quatre dès 1024 px. Les cartes remplissent leur cellule. Leur photographie carrée conserve le produit entier avec 16 px de marge interne. Le bloc titre/prix/catégorie utilise 16 px de marge interne et 8 px entre ses éléments. Les contrôles de thème, de catégorie, d’achats et de tri restent compacts et reviennent à la ligne selon la place disponible.
 
