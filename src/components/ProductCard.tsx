@@ -59,6 +59,14 @@ export function ProductCard({ product }: Props) {
           )}
         </div>
         <CardContent className="flex flex-col items-start gap-2 py-4">
+          <h2
+            className={cn(
+              "text-base leading-snug font-medium break-words",
+              product.archived && "text-muted-foreground",
+            )}
+          >
+            {product.title}
+          </h2>
           <Price
             className={cn(
               "text-base font-semibold tabular-nums sm:text-lg",
