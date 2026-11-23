@@ -11,3 +11,5 @@ imageSource: "https://www.lecreuset.fr/dw/image/v2/BDSR_PRD/on/demandware.static
 ---
 
 Photo de la variante Volcanique présentée par défaut sur la page. Couleur souhaitée à confirmer.
+
+Prix marchand vérifié le 23/11/2026 : 66 €, TTC, confirmé par l’offre JSON-LD de la variante Volcanique 11 cm, sans prix barré distinct.
