@@ -1,16 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 import { ProductCard } from "@/components/ProductCard";
-import { CategoryFilter } from "@/components/CategoryFilter";
+import { WishlistControls } from "@/components/WishlistControls";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { compareProducts } from "@/lib/wishlist";
 
-const products = (await getCollection("products")).sort((a, b) =>
-  a.id.localeCompare(b.id, "fr"),
-);
-const categories = [...new Set(products.map(({ data }) => data.category))].sort(
+const products = (await getCollection("products"))
+  .map(({ id, data }) => ({ id, ...data }))
+  .sort(compareProducts("title-asc"));
+const categories = [...new Set(products.map(({ category }) => category))].sort(
   (a, b) => a.localeCompare(b, "fr"),
 );
+const visibleCount = products.filter((product) => !product.archived).length;
 ---
 
 <BaseLayout>
@@ -22,74 +24,48 @@ const categories = [...new Set(products.map(({ data }) => data.category))].sort(
           À offrir ou à m’offrir.
         </p>
       </div>
-      <div class="flex flex-wrap items-center gap-4">
-        {products.length > 0 && <CategoryFilter categories={categories} />}
-        <ThemeSelector />
-      </div>
+      <ThemeSelector />
     </header>
     {products.length > 0 ? (
-      <ul
-        id="product-list"
-        aria-label="Produits de ma wishlist"
-        class="grid grid-cols-1 gap-5 min-[360px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-      >
-        {products.map(({ id, data }) => (
-          <li data-product={id} data-category={data.category}>
-            <ProductCard product={data} />
-          </li>
-        ))}
-      </ul>
+      <>
+        <WishlistControls categories={categories} />
+        <ul
+          id="product-list"
+          aria-label="Produits de ma wishlist"
+          class="grid grid-cols-1 gap-5 min-[360px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        >
+          {products.map((product) => (
+            <li
+              hidden={product.archived}
+              data-product={product.id}
+              data-title={product.title}
+              data-category={product.category}
+              data-archived={String(product.archived)}
+              data-price={product.price ?? ""}
+              data-currency={product.currency}
+            >
+              <ProductCard product={product} />
+            </li>
+          ))}
+        </ul>
+      </>
     ) : (
       <p class="py-12 text-muted-foreground">Aucune envie pour le moment.</p>
     )}
-    <p id="filter-result" role="status" class="sr-only"></p>
-    <p id="filter-empty" hidden class="py-12 text-muted-foreground">
-      Aucune envie dans cette catégorie.
+    <p id="filter-result" role="status" class="sr-only">
+      {visibleCount} produit{visibleCount > 1 ? "s" : ""} affiché
+      {visibleCount > 1 ? "s" : ""}
+    </p>
+    <p
+      id="filter-empty"
+      hidden={products.length === 0 || visibleCount > 0}
+      class="py-12 text-muted-foreground"
+    >
+      Toutes les envies sont déjà achetées.
     </p>
   </main>
 </BaseLayout>
 
 <script>
-  const filter = document.querySelector<HTMLSelectElement>("#category");
-  const filterContainer =
-    document.querySelector<HTMLElement>("#category-filter");
-  const cards = document.querySelectorAll<HTMLElement>("[data-product]");
-  const result = document.querySelector<HTMLElement>("#filter-result");
-  const empty = document.querySelector<HTMLElement>("#filter-empty");
-
-  if (filter && filterContainer) {
-    filterContainer.hidden = false;
-    const filterProducts = () => {
-      let visible = 0;
-      for (const card of cards) {
-        card.hidden =
-          filter.value !== "" && card.dataset.category !== filter.value;
-        if (!card.hidden) visible += 1;
-      }
-      if (result) {
-        result.textContent = `${visible} produit${visible > 1 ? "s" : ""} affiché${visible > 1 ? "s" : ""}`;
-      }
-      if (empty) empty.hidden = visible !== 0;
-    };
-    filter.addEventListener("change", filterProducts);
-    filterProducts();
-  }
-
-  document.addEventListener(
-    "error",
-    (event) => {
-      const image = event.target;
-      if (
-        image instanceof HTMLImageElement &&
-        image.hasAttribute("data-product-image")
-      ) {
-        image.hidden = true;
-        const fallback = image.parentElement?.querySelector<HTMLElement>(
-          "[data-image-fallback]",
-        );
-        if (fallback) fallback.hidden = false;
-      }
-    },
-    true,
-  );
+  import "@/scripts/wishlist";
 </script>

@@ -5,9 +5,9 @@ import {
 
 export function CategoryFilter({ categories }: { categories: string[] }) {
   return (
-    <div id="category-filter" hidden>
-      <label htmlFor="category" className="sr-only">
-        Filtrer par catégorie
+    <div className="flex flex-col gap-1.5">
+      <label htmlFor="category" className="text-sm font-medium">
+        Catégorie
       </label>
       <NativeSelect id="category" aria-controls="product-list">
         <NativeSelectOption value="">Toutes les catégories</NativeSelectOption>
