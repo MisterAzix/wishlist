@@ -6,21 +6,47 @@ import { assetPath } from "@/lib/assets";
 <!doctype html>
 <html lang="fr">
   <head>
+    <meta charset="utf-8" />
     <script is:inline>
       const colorPreference = window.matchMedia("(prefers-color-scheme: dark)");
+      const isTheme = (value) =>
+        value === "system" || value === "light" || value === "dark";
+      const readTheme = () => {
+        try {
+          const stored = localStorage.getItem("wishlist-theme");
+          return isTheme(stored) ? stored : "system";
+        } catch {
+          return "system";
+        }
+      };
+      let themePreference = readTheme();
       const applyTheme = () => {
-        document.documentElement.classList.toggle(
-          "dark",
-          colorPreference.matches,
-        );
-        document.documentElement.style.colorScheme = colorPreference.matches
-          ? "dark"
-          : "light";
+        const dark =
+          themePreference === "dark" ||
+          (themePreference === "system" && colorPreference.matches);
+        document.documentElement.classList.toggle("dark", dark);
+        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        document.documentElement.dataset.theme = themePreference;
+        window.dispatchEvent(new Event("wishlist:theme-updated"));
       };
       applyTheme();
       colorPreference.addEventListener("change", applyTheme);
+      window.addEventListener("wishlist:theme-change", (event) => {
+        if (!isTheme(event.detail)) return;
+        themePreference = event.detail;
+        try {
+          localStorage.setItem("wishlist-theme", themePreference);
+        } catch {
+          // The theme remains usable when browser storage is unavailable.
+        }
+        applyTheme();
+      });
+      window.addEventListener("storage", (event) => {
+        if (event.key !== "wishlist-theme" && event.key !== null) return;
+        themePreference = readTheme();
+        applyTheme();
+      });
     </script>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
@@ -31,5 +57,8 @@ import { assetPath } from "@/lib/assets";
   </head>
   <body class="min-h-screen antialiased">
     <slot />
+    <script>
+      import "@/scripts/theme";
+    </script>
   </body>
 </html>

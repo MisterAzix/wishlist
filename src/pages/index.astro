@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { ProductCard } from "@/components/ProductCard";
 import { CategoryFilter } from "@/components/CategoryFilter";
+import { ThemeSelector } from "@/components/ThemeSelector";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const products = (await getCollection("products")).sort((a, b) =>
@@ -21,7 +22,10 @@ const categories = [...new Set(products.map(({ data }) => data.category))].sort(
           À offrir ou à m’offrir.
         </p>
       </div>
-      {products.length > 0 && <CategoryFilter categories={categories} />}
+      <div class="flex flex-wrap items-center gap-4">
+        {products.length > 0 && <CategoryFilter categories={categories} />}
+        <ThemeSelector />
+      </div>
     </header>
     {products.length > 0 ? (
       <ul
